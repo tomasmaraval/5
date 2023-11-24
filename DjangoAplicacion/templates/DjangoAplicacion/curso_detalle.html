@@ -1,0 +1,13 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>DETALLE CURSO</h1>
+<p>Curso: <i>{{curso.curso}}</i></p>
+<p>Camada:<i>{{curso.camada}}</i></p>
+<p>
+    <a href="{% url 'ListaCursos' %}">Regresar</a>
+</p>
+
+{% endblock contenidoQueCambia %}

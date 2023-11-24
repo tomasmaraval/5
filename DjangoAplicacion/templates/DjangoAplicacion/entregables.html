@@ -1,0 +1,12 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<form action="{% url 'entregables' %}" method="POST">
+    {% csrf_token %}
+    <p>Nombre: <input type="text" name="nombre">
+    <p>Fecha de entrega: <input type="date" name="fecha_entrega">    
+    <p>Entregado: <input type="checkbox" name="enrtegado">
+    <input type="submit" value="Enviar"> 
+</form>
+{% endblock contenidoQueCambia %}

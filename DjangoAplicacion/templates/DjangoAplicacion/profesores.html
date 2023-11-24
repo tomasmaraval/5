@@ -1,0 +1,14 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>CREANDO PROFESOR:</h1>
+<form action="{% url 'profes' %}" method="POST">
+    {% csrf_token %}
+    <p>Nombre: <input type="text" name="nombre">
+    <p>Apellido: <input type="text" name="apellido">    
+    <p>Email: <input type="email" name="email">
+    <p>Profesion: <input type="text" name="profesion">
+    <input type="submit" value="Enviar"> 
+</form>
+{% endblock contenidoQueCambia %}

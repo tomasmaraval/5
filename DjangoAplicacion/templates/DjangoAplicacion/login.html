@@ -1,0 +1,12 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1> LOGIN </h1>
+<form action="" method="POST"> {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Iniciar Sesion">
+</form>
+
+{% endblock contenidoQueCambia %}

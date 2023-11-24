@@ -1,0 +1,26 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>LISTADO DE CURSOS</h1>
+
+{% for curso in cursos %}
+    <li>Curso: {{curso.curso}}
+        <p>
+            {% if not request.user.is_authenticated %}
+            <a href="{% url 'DetalleCurso' curso.pk %}">Detalles</a>
+            {% else %}
+            <a href="{% url 'DetalleCurso' curso.pk %}">Detalles</a>
+            <a href="{% url 'EditarCurso' curso.pk %}">Editar</a>
+            <a href="{% url 'BorrarCurso' curso.pk %}">Borrar</a>
+            {% endif %}
+        </p>
+    </li>
+{% endfor %}
+
+{% if request.user.is_authenticated %}
+<a href="{% url 'CrearCurso' %}"> Crear un Nuevo Curso </a>
+{% endif %}
+
+{% endblock contenidoQueCambia %}

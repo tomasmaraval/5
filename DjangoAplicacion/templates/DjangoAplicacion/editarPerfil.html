@@ -1,0 +1,21 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1> EDITAR PERFIL: {{usuario}}</h1>
+
+<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <table>
+        {{mi_formulario}}
+    </table>
+
+    <input type="submit", value="Enviar">
+
+</form>
+
+<button type="button">
+    <a class="navbar-brand" href="{% url 'cambiarContraseña' %}">Cambiar Contraseña</a>
+</button>
+
+{% endblock contenidoQueCambia %}

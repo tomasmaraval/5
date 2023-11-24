@@ -1,0 +1,15 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1> CAMBIAR CONTRASEÑA</h1>
+
+<form action="" method="POST">{% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <button type="submit">Cambiar</button>
+</form>
+
+{% endblock contenidoQueCambia %}

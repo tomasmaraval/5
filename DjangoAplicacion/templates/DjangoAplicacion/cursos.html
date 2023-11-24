@@ -1,0 +1,11 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<form action="{% url 'cursos' %}" method="POST">
+    {% csrf_token %}
+    <p>Curso: <input type="text" name="curso">
+    <p>Camada: <input type="number" name="camada">
+    <input type="submit" value="Enviar"> 
+</form>
+{% endblock contenidoQueCambia %}

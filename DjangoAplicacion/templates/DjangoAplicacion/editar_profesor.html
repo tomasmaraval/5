@@ -1,0 +1,14 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>EDITANDO PROFESOR:</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{mi_formulario.as_table}}
+    </table>
+</form>
+
+{% endblock contenidoQueCambia %}

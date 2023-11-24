@@ -1,0 +1,21 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+{% for p in profesores %}
+    <li>{{p}}</li>
+    {% if request.user.is_authenticated %}
+    <button>
+        <a href="{% url 'eliminar_profesor' p.nombre %}"> Eliminar </a>
+    </button>
+    <button>
+        <a href="{% url 'editar_profesor' p.nombre %}"> Editar </a>
+    </button>
+    {% endif %}
+{% endfor %}
+
+{% if request.user.is_authenticated %}
+<a href="{% url 'profes' %}"> Crear un Nuevo Profesor </a>
+{% endif %}
+
+{% endblock contenidoQueCambia %}
